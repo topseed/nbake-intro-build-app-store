@@ -1,41 +1,35 @@
-/*
-	TT.handle(function(evt) {
-		console.log(':')
-		if(TT.PRE==evt.typ)  {//start
-			console.log(evt.$new)
-			pgSplit($('#content-wrapper'), 350 )
-			//$('#content-wrapper').fadeTo(100,.2)
-		}
-		if(TT.PAGE==evt.typ)  {//new pg loaded
-			$(TT.ScontentID).html(evt.$new)
-			//$('#content-wrapper').fadeTo(100,1)
 
-		}
-*/
 
-console.log('MAIN override')
-loadjs.ready(['site','split'], function(){
-	console.log('MAIN override')
+loadjs.ready(['site','pfx'], function(){
+	console.log('pfx override')
 
 	tsrouter.onNavigate(function(evt) {
 		if (evt.type == tsrouter.NAV)  { //start
 			console.log('XXX XXX XXX NAV')
-			pgSplit($('#router'), 350 )
 
 			//$('#router').fadeTo(100,.2)
 		}
 		else if (evt.type == tsrouter.PAGE)  {
 			console.log('XXX XXX XXX PAGE')
-			$(tsrouter.zone).html(evt.newContent)
+			//$(tsrouter.zone).html(evt.newContent)
+
 			//$('#router').fadeTo(100,1)
-			window.scrollTo(0, 0)
-		}
-	})
-})
+			$(tsrouter.zone).transition({animation: 'fade', duration: '0.2s',
+				onComplete : function() {
+					$(tsrouter.zone).html(evt.newContent)
+					$(tsrouter.zone).transition({animation: 'fly left', duration: '0.4s'})
+					window.scrollTo(0, 0)
+				}
+			})//trans
+
+		}//else
+
+	})//onNav
+})//ready
 
 loadjs([
-		'/assets/js/split.js'
-		,'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js']
-	, 'split', {
+		 '//cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/components/transition.min.js'
+		,'//cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/components/transition.css'
+		], 'pfx', {
 	async: false //required due to loadjs bug with bundles
 })

@@ -1,4 +1,32 @@
 
+/*
+loadjs.ready(['site','split'], function(){
+	console.log('SPLIT override')
+
+	tsrouter.onNavigate(function(evt) {
+		if (evt.type == tsrouter.NAV)  { //start
+			console.log('XXX XXX XXX NAV')
+			pgSplit($('#router'), 350 )
+			//$('#router').fadeTo(100,.2)
+		}
+		else if (evt.type == tsrouter.PAGE)  {
+			console.log('XXX XXX XXX PAGE')
+			$(tsrouter.zone).html(evt.newContent)
+			//$('#router').fadeTo(100,1)
+			window.scrollTo(0, 0)
+		}
+	})
+})
+
+loadjs([
+		'//cdn.jsdelivr.net/jquery.transit/0.9.12/jquery.transit.min.js']
+		,'/assets/js/split.js'
+	, 'split', {
+	async: false //required due to loadjs bug with bundles
+})
+
+*/
+
 // http://github.com/cekvenich/www/tree/master/srv/webroot
 
 console.log('split loaded')
