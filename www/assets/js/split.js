@@ -4,9 +4,7 @@
 console.log('split loaded')
 //====================================================================
 function pgSplit($cont_, speed) {
-	//console.log('spliting:')
-	//$('#content-wrapper').fadeTo(1,.2)//hide
-	//$('#content-wrapper').fadeTo(speed/2,1)
+	console.log('spliting:')
 
 	// compute endpoints math to split screen
 	var haf = $(window).width() / 2
@@ -23,11 +21,11 @@ function pgSplit($cont_, speed) {
 	$firstSl.find().remove('script')//script no work w/ split
 
 	var $cloneSl = $firstSl.clone()
-	$('#content-wrapper0').append($firstSl)
+	$('#routerFx').append($firstSl)
 	$firstSl.wrapAll('<div id="firstSl" class="firstSl"/>')
 
 	// point to clone and wrap
-	$('#content-wrapper0').append($cloneSl)
+	$('#routerFx').append($cloneSl)
 	$cloneSl.wrapAll('<div id="cloneSl" class="cloneSl"/>')
 	$cont_.empty()
 
@@ -49,13 +47,11 @@ function pgSplit($cont_, speed) {
 	$('#cloneSl *').css('min-height',he)
 	$('#cloneSl').css('background','gray')
 
-	//$('#content-wrapper0').fadeTo(speed*3,.7)
 	$('#firstSl').transition({x: lft, easing: 'linear', duration: speed})
 	$('#cloneSl').transition({x: haf, easing: 'linear', duration: speed})
 	setTimeout(function(){
-		//console.log(':cleanup')
-		$('#content-wrapper0').empty()
-		//$('#content-wrapper0').fadeTo(1,1)//show
+		console.log(':cleanup')
+		$('#routerFx').empty()
 	}, speed)
 
 }//()

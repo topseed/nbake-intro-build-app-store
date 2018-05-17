@@ -120,12 +120,12 @@ loadjs.ready('site', function(){
 	tsrouter.onNavigate(function(evt) {
 		if (evt.type == tsrouter.NAV)  { //start
 			console.log('tsrouter NAV')
-			//$('#content-wrapper').fadeTo(100,.2)
+			//$('#router').fadeTo(100,.2)
 		}
 		else if (evt.type == tsrouter.PAGE)  {
 			console.log('tsrouter PAGE')
 			$(tsrouter.zone).html(evt.newContent)
-			//$('#content-wrapper').fadeTo(100,1)
+			//$('#router').fadeTo(100,1)
 			window.scrollTo(0, 0)
 		}
 	})

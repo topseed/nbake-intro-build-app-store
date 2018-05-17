@@ -83,7 +83,10 @@ loadjs.ready(['site'], function () {// do nav, signal is ready, but not style
 loadjs.ready(['style'], function () {// 'show' page, ex: unhide
 	console.log('style done', Date.now()-_start)
 
-	loadjs('/assets/js/main.js')
+	loadjs('/assets/js/main.js',
+		'mainjs', {
+		async: false //required due to loadjs bug with bundles
+	})
 
 })
 loadjs.ready(['css2'], function () {// 'show' page, ex: unhide
