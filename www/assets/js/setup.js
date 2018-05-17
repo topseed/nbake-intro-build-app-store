@@ -82,6 +82,9 @@ loadjs.ready(['site'], function () {// do nav, signal is ready, but not style
 })
 loadjs.ready(['style'], function () {// 'show' page, ex: unhide
 	console.log('style done', Date.now()-_start)
+
+	loadjs('/assets/js/main.js')
+
 })
 loadjs.ready(['css2'], function () {// 'show' page, ex: unhide
 	console.log('css2 done', Date.now()-_start)
