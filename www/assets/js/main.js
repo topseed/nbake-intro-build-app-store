@@ -1,5 +1,11 @@
 
 
+
+
+
+
+
+
 loadjs.ready(['site','pfx'], function(){
 	console.log('pfx override')
 
@@ -27,8 +33,8 @@ loadjs.ready(['site','pfx'], function(){
 	})//onNav
 })//ready
 
-loadjs([
-		 '//cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/components/transition.min.js'
+loadjs(['//cdn.jsdelivr.net/npm/alloyfinger@0.1.13/alloy_finger.js'
+		, '//cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/components/transition.min.js'
 		,'//cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/components/transition.css'
 		], 'pfx', {
 	async: false //required due to loadjs bug with bundles
