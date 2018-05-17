@@ -1,7 +1,7 @@
 // ts router generic //////////////////////////////////////////////////////////////////////////////
 loadjs.ready('site', function () {
 
-	console.log('ts router', "v3.05.01")
+	console.log('ts router', "v3.05.17")
 
 	$(window).on('popstate', function(e) {//back/forward button
 		console.log('tsrouter popstate'+e.originalEvent.state)
@@ -40,7 +40,7 @@ loadjs.ready('site', function () {
 
 let tsrouter = {
 
-	zone: '#ss' //the content in your layout. The rest should be app shell from PWA.
+	zone: '#router' //the content in your layout. The rest should be app shell from PWA.
 	, NAV : '_navigation-start'
 	, PAGE : '_newpage-loaded'
 	, navigated: new signals.Signal()
@@ -114,11 +114,10 @@ let tsrouter = {
 
 // /////////////////////////////////////////////////////////////////////////////////////
 
-// example use:
-
+// use:
 loadjs.ready('site', function(){
 	console.log('setup tsr')
-	tsrouter.zone = '#ss'
+	//tsrouter.zone = '#router'
 	tsrouter.onNavigate(function(evt) {
 		if (evt.type == tsrouter.NAV)  { //start
 			console.log('tsrouter NAV')
