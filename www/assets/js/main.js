@@ -1,10 +1,21 @@
 
+loadjs.ready(['site','pfx'], function(){
+	console.log('gesture')
 
+	const guest  = new ZingTouch.Region(document.body)
+	guest.bind(document.body, 'swipe', function(e){
+		let angle = e.detail.data[0].currentDirection
+		console.log(angle)
 
+		if(angle<45||angle>360-45)
+			console.log('r')
 
+		if(angle>180-45&&angle<180+45)
+			console.log('l')
 
+		})
 
-
+})//ready
 
 loadjs.ready(['site','pfx'], function(){
 	console.log('pfx override')
@@ -33,7 +44,7 @@ loadjs.ready(['site','pfx'], function(){
 	})//onNav
 })//ready
 
-loadjs(['//cdn.jsdelivr.net/npm/alloyfinger@0.1.13/alloy_finger.js'
+loadjs(['//cdn.jsdelivr.net/npm/zingtouch@1.0.6/dist/zingtouch.js'
 		, '//cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/components/transition.min.js'
 		,'//cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/components/transition.css'
 		], 'pfx', {
