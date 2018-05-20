@@ -5,23 +5,25 @@ We have a good router, similar to crossroads.js.
 
 For FX, uncomment line 87 in setup.js
 
+You can get a starter app with 'nbake -b' (b, for build phone gap)
+
+Important 1: deploy this app to cloud, ex: via 'now' from zeit.
+
 ## Part II *Build Phonegap*
 
 Optional:
 - http://youtube.com/watch?v=ZgUAT7CIhsY
 
-IMPORTANT: Note that 'Build Phonegap' is different from 'Phonegap'.
+IMPORTANT 2: Note that 'Build Phonegap' is different from 'Phonegap'.
 'Build Phonegap' does not need or use XCode or Andorid SDK as it builds in the cloud.
 
 0. Before starting appstore:
 
 a) make sure you regualr web app looks good in mobile size, for example in Google Chrom Dev Tools.
 
-b) all the links to assets must be relative. And a good idea that some link to your CDN, or better, link you to your regular www application in the cloud - load assets from the cloud. It may be harder to develop an appstore app if you don't have the it allready delopyed as www.
+b) engage logz.io, so you can see traces, else you wont. There is no consol on the mobile device. http://app.logz.io/#/dashboard/live-tail (click 'play')
 
-c) In general, you want to load the index.html page in root, so that relative links are easier.
-
-d) You can get a starter app with 'nbake -b' (b, for build phone gap)
+c) all the links to assets must be relative. So link to your regular www application in the cloud - load from the cloud. The link you got in important 1 above.
 
 1. Developing for a device, you'll need 'remote' logging since you can't see messages in browser console. Some choices include weinre, Prepros or logz.io, but there are others. One of 3 should be configured in regular browser before building. You should be able to see web app loggs remotely!
 
