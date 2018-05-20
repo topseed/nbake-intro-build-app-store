@@ -13,11 +13,17 @@ Optional:
 IMPORTANT: Note that 'Build Phonegap' is different from 'Phonegap'.
 'Build Phonegap' does not need or use XCode or Andorid SDK as it builds in the cloud.
 
-0) Before starting make sure you app looks good in mobile size, for example in Google Chrom Dev Tools. Also, that there is only one index.html and in root, this is SPA. And paths need to relative - there is no web server.
-Last
-You can get a starter app with 'nbake -b'.
+0. Before starting appstore:
 
-1) Developing for a device, you'll need 'remote' logging since you can't see messages in browser console. Some choices include weinre, Prepros or logz.io, but there are others. One of 3 should be configured in regular browser before building. You should be able to see web app loggs remotely!
+a) make sure you regualr web app looks good in mobile size, for example in Google Chrom Dev Tools.
+
+b) all the links to assets must be relative. And a good idea that some link to your CDN, or better, link you to your regular www application in the cloud - load assets from the cloud. It may be harder to develop an appstore app if you don't have the it allready delopyed as www.
+
+c) In general, you want to load the index.html page in root, so that relative links are easier.
+
+d) You can get a starter app with 'nbake -b' (b, for build phone gap)
+
+1. Developing for a device, you'll need 'remote' logging since you can't see messages in browser console. Some choices include weinre, Prepros or logz.io, but there are others. One of 3 should be configured in regular browser before building. You should be able to see web app loggs remotely!
 
 
 2. A and/or B.

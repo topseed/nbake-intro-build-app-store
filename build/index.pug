@@ -1,9 +1,17 @@
-html
-	head
-		link(rel='shortcut icon', type='image/x-icon', href='/assets/favicon.ico')
-		meta(http-equiv='Cache-Control', content='no-cache, no-store, must-revalidate')
-		meta(http-equiv='Pragma', content='no-cache')
-		meta(http-equiv='Expires', content='0')
-		script.
-			window.location.href = 'page/one/'
-	body
+extends /layout/_layout
+//- App Shell
+
+block head
+	//static binding ex:
+	title #{title}
+
+block main
+	p
+	.ui.text.container
+		include _pinc
+	
+	script.
+		loadjs.ready('style', function () {
+			console.log('page 1 script here')
+		})
+
