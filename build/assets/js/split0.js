@@ -1,16 +1,16 @@
 
 /*
 loadjs.ready(['site','split'], function(){
-	console.log('SPLIT override')
+	log.log('SPLIT override')
 
 	tsrouter.onNavigate(function(evt) {
 		if (evt.type == tsrouter.NAV)  { //start
-			console.log('XXX XXX XXX NAV')
+			log.log('XXX XXX XXX NAV')
 			pgSplit($('#router'), 350 )
 			//$('#router').fadeTo(100,.2)
 		}
 		else if (evt.type == tsrouter.PAGE)  {
-			console.log('XXX XXX XXX PAGE')
+			log.log('XXX XXX XXX PAGE')
 			$(tsrouter.zone).html(evt.newContent)
 			//$('#router').fadeTo(100,1)
 			window.scrollTo(0, 0)
@@ -29,10 +29,10 @@ loadjs([
 
 // http://github.com/cekvenich/www/tree/master/srv/webroot
 
-console.log('split loaded')
+log.log('split loaded')
 //====================================================================
 function pgSplit($cont_, speed) {
-	console.log('spliting:')
+	log.log('spliting:')
 
 	// compute endpoints math to split screen
 	var haf = $(window).width() / 2
@@ -78,7 +78,7 @@ function pgSplit($cont_, speed) {
 	$('#firstSl').transition({x: lft, easing: 'linear', duration: speed})
 	$('#cloneSl').transition({x: haf, easing: 'linear', duration: speed})
 	setTimeout(function(){
-		console.log(':cleanup')
+		log.log(':cleanup')
 		$('#routerFx').empty()
 	}, speed)
 

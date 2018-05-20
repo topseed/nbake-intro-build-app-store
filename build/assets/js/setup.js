@@ -25,8 +25,8 @@
 			let logImg = new Image()
 			logImg.src = logUrl
 		 } catch (ex) {
-			if (window && window.console && typeof window.console.log == 'function')
-				console.log("Failed to send log because of exception:\n" + ex)
+			if (window && window.console && typeof window.log.log == 'function')
+				log.log("Failed to send log because of exception:\n" + ex)
 		 }
 	}
 	window.LogzioLogger = LogzioLogger
@@ -92,7 +92,7 @@ loadjs.ready(['core'], function () {
 })//()
 
 function cssLoaded() {// called by the style sheet in layout
-	console.log('css loaded', Date.now()-_start)
+	log.log('css loaded', Date.now()-_start)
 	loadjs.done('css')
 }
 
@@ -113,16 +113,16 @@ loadjs.ready(['style'], function () { //load large css
 		})
 	},1000/60)
 })
-console.log('setup', "v2.05.12")
+log.log('setup', "v2.05.12")
 // usage: ////////////////////////////////////////////////////////////////////
 loadjs.ready(['core'], function () {// load data
-	console.log('core done', Date.now()-_start)
+	log.log('core done', Date.now()-_start)
 })
 loadjs.ready(['site'], function () {// do nav, signal is ready, but not style
-	console.log('site done', Date.now()-_start)
+	log.log('site done', Date.now()-_start)
 })
 loadjs.ready(['style'], function () {// 'show' page, ex: unhide
-	console.log('style done', Date.now()-_start)
+	log.log('style done', Date.now()-_start)
 
 	/*
 	loadjs('/assets/js/main.js',
@@ -133,14 +133,14 @@ loadjs.ready(['style'], function () {// 'show' page, ex: unhide
 
 })
 loadjs.ready(['css2'], function () {// 'show' page, ex: unhide
-	console.log('css2 done', Date.now()-_start)
+	log.log('css2 done', Date.now()-_start)
 })
 
 window.addEventListener('pageshow', function(event) {
-	console.log('pageshow:', event.timeStamp)
+	log.log('pageshow:', event.timeStamp)
 })
 window.addEventListener('load', function(event) {
-	console.log('load:', event.timeStamp)
+	log.log('load:', event.timeStamp)
 })
 
 // util: /////////////////////////////////////////////////////////////////////

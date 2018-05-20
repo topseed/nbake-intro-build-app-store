@@ -1,10 +1,10 @@
 // ts router generic //////////////////////////////////////////////////////////////////////////////
 loadjs.ready('site', function () {
 
-	console.log('ts router', "v3.05.17")
+	log.log('ts router', "v3.05.17")
 
 	$(window).on('popstate', function(e) {//back/forward button
-		console.log('tsrouter popstate'+e.originalEvent.state)
+		log.log('tsrouter popstate'+e.originalEvent.state)
 		let state = e.originalEvent.state
 		if (state !== null) {
 			e.preventDefault()
@@ -50,7 +50,7 @@ let tsrouter = {
 	}
 
 	, loadHtml: function(toHref, fromHref, back) { //triggered, but function can be called directly also
-		console.log('loaded', toHref)
+		log.log('loaded', toHref)
 		if (!back) {
 			history.pushState({url: toHref}, '', toHref)
 		}
@@ -59,14 +59,14 @@ let tsrouter = {
 		tsrouter.navigated.dispatch( {type:tsrouter.NAV, toHref:toHref, fromHref:fromHref, back:back} )
 
 		let url = tsrouter.appendQueryString(toHref, {'tsrouter': "\""+tsrouter.zone+"\""} )
-		console.log(url)
+		log.log(url)
 		fetch(url, {
 				method: 'get',
 				credentials: 'same-origin'
 			}).then(function(response) {
 				if (!response.ok) {
-					console.log('not ok')
-					console.log(response)
+					log.log('not ok')
+					log.log(response)
 					throw Error(response.statusText)
 				}
 				return response.text()
@@ -76,13 +76,13 @@ let tsrouter = {
 				document.title = title
 
 				let newContent = $html.find(tsrouter.zone).html()
-				//console.log(newContent)
+				//log.log(newContent)
 
 				//fire new PAGE received event
 				tsrouter.navigated.dispatch( {type:tsrouter.PAGE, toHref:toHref, fromHref:fromHref, newContent:newContent, $html:$html, back:back} )
 
 			}).catch(function(er) {
-				console.log(er)
+				log.log(er)
 				tsrouter.navigated.dispatch({type:tsrouter.ERR, err:er})
 		})
 	}
@@ -116,14 +116,14 @@ let tsrouter = {
 
 // use / override:
 loadjs.ready('site', function(){
-	console.log('setup tsr')
+	log.log('setup tsr')
 	tsrouter.onNavigate(function(evt) {
 		if (evt.type == tsrouter.NAV)  { //start
-			console.log('tsrouter NAV')
+			log.log('tsrouter NAV')
 			//$('#router').fadeTo(100,.2)
 		}
 		else if (evt.type == tsrouter.PAGE)  {
-			console.log('tsrouter PAGE')
+			log.log('tsrouter PAGE')
 			$(tsrouter.zone).html(evt.newContent)
 			//$('#router').fadeTo(100,1)
 			window.scrollTo(0, 0)

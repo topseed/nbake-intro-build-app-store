@@ -24,7 +24,7 @@ html
 			block main
 
 		script.
-			console.log('layout')
+			log.log('layout')
 
 			loadjs.ready('style', function() {
 				//show a bit
@@ -39,5 +39,5 @@ html
 				$('.ui.sidebar').sidebar('attach events', '.toc.item')
 
 			})//ready
-		link(rel='stylesheet', href='assets/css/semantic1.css', onload='cssLoaded()')
+		link(rel='stylesheet', href='../../assets/css/semantic1.css', onload='cssLoaded()')
 

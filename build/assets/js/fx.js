@@ -1,33 +1,33 @@
 
 loadjs.ready(['site','pfx'], function(){
-	console.log('gesture')
+	log.log('gesture')
 
 	const guest  = new ZingTouch.Region(document.body)
 	guest.bind(document.body, 'swipe', function(e){
 		let angle = e.detail.data[0].currentDirection
-		console.log(angle)
+		log.log(angle)
 
 		if(angle<45||angle>360-45)
-			console.log('r')
+			log.log('r')
 
 		if(angle>180-45&&angle<180+45)
-			console.log('l')
+			log.log('l')
 
 		})
 
 })//ready
 
 loadjs.ready(['site','pfx'], function(){
-	console.log('pfx override')
+	log.log('pfx override')
 
 	tsrouter.onNavigate(function(evt) {
 		if (evt.type == tsrouter.NAV)  { //start
-			console.log('XXX XXX XXX NAV')
+			log.log('XXX XXX XXX NAV')
 
 			//$('#router').fadeTo(100,.2)
 		}
 		else if (evt.type == tsrouter.PAGE)  {
-			console.log('XXX XXX XXX PAGE')
+			log.log('XXX XXX XXX PAGE')
 			//$(tsrouter.zone).html(evt.newContent)
 
 			//$('#router').fadeTo(100,1)
