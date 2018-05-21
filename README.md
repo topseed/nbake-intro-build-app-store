@@ -3,21 +3,21 @@
 SPA/PWA is good for native/cross platform app store.
 We have a good router, similar to crossroads.js.
 
-For FX, uncomment line 87 in setup.js ( in public )
+For cool transition effects, uncomment line 87 in setup.js ( in public )
 
 Important 1: deploy this app (from public ) to cloud, ex: via 'now' from zeit.
 
 ## Part II Cordova.
 
-Games are done like this 'hybrid cross platofrm', so I doubt it is slow.
-Much cheaper. You can't have one IOS develper, you need 2 for back up, and same for Andorid. With cross platform development, you just removed 4 FTE
+Games are done like this 'hybrid cross platform', so I doubt it is slow.
+Much cheaper. You can't have one IOS develper, you need 2 for back up, and same for Android. With cross platform development, you just removed 4 FTE.
 
 
 0. Before starting appstore:
 
-a) make sure you regualr web app looks good in mobile size, for example in Google Chrom Dev Tools.
+a) make sure your regular web app looks good in mobile size, for example in Google Chrome Dev Tools.
 
-b) engage logz.io, so you can see traces, else you wont. There is no console on the mobile device. http://app.logz.io/#/dashboard/live-tail (click 'play')
+b) engage logz.io, so you can see traces, else you won't. There is no console on the mobile device. http://app.logz.io/#/dashboard/live-tail (click 'play')
 
 c) all the links to assets must be relative. So link to your regular www application in the cloud - load from the cloud. The link you got in important 1 above.
 
@@ -29,11 +29,11 @@ c) all the links to assets must be relative. So link to your regular www applica
 For IOS app store you need to register with Apple as a developer (~$99/year) and apply. Application takes 48 hours to a week. You can then generate a key. You don't need Xcode
 for Build Phonegap, but you do need OSX to generate keys. If you don't own a Mac, or even if you do, you should 'rent' a cloud hosted OSX machine for an hour, to generate the keys. You should store those keys with your manager.
 ( A few places that offer OSX hosting: http://macminicolo.net , http://macstadium.com , http://macincloud.com but there are others ).
-So a week form now, you can have an Apple developer account and developer keys to deploy to your test IOS device. New iPod is $199, but on the Apple site there are refurbished ipod and ipads with like-new warranty for less - some have an embedded sim and so allow a data only plan.  Good for podcasts when you commute or travel, if you have only one or other, most developers have IOS.
+So a week from now, you can have an Apple developer account and developer keys to deploy to your test IOS device. New iPod is $199, but on the Apple site there are refurbished ipod and ipads with like-new warranty for less - some have an embedded SIM and so allow a data only plan.  Good for podcasts when you commute or travel, if you have only one or other, most developers have IOS.
 
 3. Connect to the OSX in the cloud.
 
-For Andorid app store, you need an Andorid device( ex: 'project fi' ) in develper mode, http://qodycloud.com , Genymotion VM or such. You don't need 'developer keys'), very easy.
+For Andriid app store, you need an Andorid device( ex: 'project fi' ) in develper mode, http://qodycloud.com , Genymotion VM or such. You don't need 'developer keys'), very easy.
 
 
 		npm i -g cordova
@@ -42,7 +42,7 @@ For Andorid app store, you need an Andorid device( ex: 'project fi' ) in develpe
 Edit www/js index to go to 'important 1' url above'
 
 
-4. In Andorid and/or IOS, install your app
+4. In Android and/or IOS, install your app
 
 In theory 'build.phonegap.com' can supplement your Cordova build
 Check:
