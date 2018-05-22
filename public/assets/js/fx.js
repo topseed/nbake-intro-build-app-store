@@ -13,7 +13,6 @@ loadjs.ready(['site','pfx'], function(){
 })//ready
 
 loadjs.ready(['site','pfx'], function(){
-
 	tsrouter.onNavigate(function(evt) {
 	 if (evt.type == tsrouter.PAGE)  {
 			log.log('PAGE')
@@ -26,9 +25,7 @@ loadjs.ready(['site','pfx'], function(){
 					window.scrollTo(0, 0)
 				}
 			})//trans
-
 		}//else
-
 	})//onNav
 })//ready
 
