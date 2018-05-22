@@ -1,39 +1,27 @@
 
 loadjs.ready(['site','pfx'], function(){
 	log.log('gesture')
-
 	const guest  = new ZingTouch.Region(document.body)
 	guest.bind(document.body, 'swipe', function(e){
 		let angle = e.detail.data[0].currentDirection
 		log.log(angle)
-
 		if(angle<45||angle>360-45)
-			log.log('r')
-
+			log.log('swiped right')
 		if(angle>180-45&&angle<180+45)
-			log.log('l')
-
+			log.log('swiped left')
 		})
-
 })//ready
 
 loadjs.ready(['site','pfx'], function(){
-	log.log('pfx override')
 
 	tsrouter.onNavigate(function(evt) {
-		if (evt.type == tsrouter.NAV)  { //start
-			log.log('XXX XXX XXX NAV')
-
-			//$('#router').fadeTo(100,.2)
-		}
-		else if (evt.type == tsrouter.PAGE)  {
-			log.log('XXX XXX XXX PAGE')
-			//$(tsrouter.zone).html(evt.newContent)
-
-			//$('#router').fadeTo(100,1)
+	 if (evt.type == tsrouter.PAGE)  {
+			log.log('PAGE')
 			$(tsrouter.zone).transition({animation: 'fade', duration: '0.2s',
 				onComplete : function() {
+
 					$(tsrouter.zone).html(evt.newContent)
+
 					$(tsrouter.zone).transition({animation: 'fly left', duration: '0.4s'})
 					window.scrollTo(0, 0)
 				}
